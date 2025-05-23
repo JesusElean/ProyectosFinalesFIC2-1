@@ -23,7 +23,6 @@ import java.util.List;
 public class Ventas extends AppCompatActivity {
     EditText etIdVenta, etFechaVenta, etTotalVenta, etIdCliente, etTipoPago;
     BasesDeDatosSQLite ventasBD;
-    Toolbar cajaDeHerramientas;
     RecyclerView rcV;
     VentasAdapter adaptadorVentas;
     List<VentasView> listaVentas;
@@ -40,8 +39,6 @@ public class Ventas extends AppCompatActivity {
         etIdCliente = findViewById(R.id.eTId_Cliente);
         etTipoPago = findViewById(R.id.eTTipo_Pago);
         rcV = findViewById(R.id.rVVentas);
-        cajaDeHerramientas = findViewById(R.id.tBVentas);
-        setSupportActionBar(cajaDeHerramientas);
 
         listaVentas = new ArrayList<>();
         adaptadorVentas = new VentasAdapter(listaVentas);

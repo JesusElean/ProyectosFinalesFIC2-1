@@ -1,207 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainDetallesVentas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#DCDCDC"
     android:orientation="vertical"
     tools:context=".Ventas">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tBVentas"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtProductos"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#B22222"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:layout_marginTop="32dp"
+        android:drawableLeft="@drawable/ventas"
+        android:fontFamily="sans-serif"
+        android:text="VENTAS"
+        android:textAlignment="textStart"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/tLVentas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TableRow
-            android:id="@+id/tRVentas_1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/btnAgregarVentas"
-                android:layout_width="205dp"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="@font/b612_mono"
-                android:onClick="onAgregarVenta"
-                android:text="Agregar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:icon="@drawable/agregar"
-                app:iconTint="#000000" />
-
-            <Button
-                android:id="@+id/btnModificarVentas"
-                android:layout_width="205dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="@font/b612_mono"
-                android:onClick="onModificarVenta"
-                android:text="Modificar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:icon="@drawable/modificar"
-                app:iconTint="#000000" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tRVentas_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/btnBorrarVentas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="@font/b612_mono"
-                android:onClick="onBorrarVenta"
-                android:text="Borrar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:icon="@drawable/borrar"
-                app:iconTint="#000000" />
-
-            <Button
-                android:id="@+id/btnConsultarVentas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="@font/b612_mono"
-                android:onClick="onConsultarVenta"
-                android:text="Consultar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:icon="@drawable/consultar"
-                app:iconTint="#000000" />
-
-        </TableRow>
-
-    </TableLayout>
-
-    <LinearLayout
-        android:id="@+id/lLHVentas"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnAgregarVentas"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onAgregarVenta"
+        android:text="Agregar"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/agregar"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTTipo_Pago"
+        app:layout_constraintVertical_bias="0.049" />
 
-        <EditText
-            android:id="@+id/eTId_Venta"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="IdVenta"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTFechaVenta"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Fecha"
-            android:inputType="date"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTTotalVentas"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Total"
-            android:inputType="numberDecimal"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTId_Cliente"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="IdCliente"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTTipo_Pago"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Pago"
-            android:inputType="text"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lLVVentas_1"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnModificarVentas"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onModificarVenta"
+        android:text="Modificar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:icon="@drawable/modificar"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarVentas"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <include
-            android:id="@+id/iTablaVentas"
-            layout="@layout/tablaventas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lLVVentas_2"
-        android:layout_width="match_parent"
-        android:layout_height="375dp"
-        android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rVVentas"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lLVVentas_3"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnBorrarVentas"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="vertical">
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onBorrarVenta"
+        android:text="Borrar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:icon="@drawable/borrar"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsultarVentas"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/btnSalirDeVentas"
-            android:layout_width="62dp"
-            android:layout_height="72dp"
-            android:backgroundTint="#B22222"
-            android:onClick="onSalirDeVentas"
-            app:icon="@drawable/salirdelmenu1"
-            app:iconGravity="textStart"
-            app:iconSize="24sp"
-            app:iconTint="#FFFFFF" />
+    <Button
+        android:id="@+id/btnConsultarVentas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onConsultarVenta"
+        android:text="Consultar"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/consultar"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnModificarVentas"
+        app:layout_constraintVertical_bias="0.0" />
 
-    </LinearLayout>
-</LinearLayout>
+    <EditText
+        android:id="@+id/eTId_Venta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="IdVenta"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProductos"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/eTFechaVenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Fecha"
+        android:inputType="date"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTId_Venta"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/eTTotalVentas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Total"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTFechaVenta"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/eTId_Cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="IdCliente"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/eTTotalVentas"
+        app:layout_constraintVertical_bias="0.002" />
+
+    <EditText
+        android:id="@+id/eTTipo_Pago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Pago"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTId_Cliente"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnSalirDeVentas"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#FA8072"
+        android:onClick="onSalirDeVentas"
+        app:icon="@drawable/salirdelmenu1"
+        app:iconSize="18sp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rVVentas"
+        android:background="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:layout_width="411dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBorrarVentas"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

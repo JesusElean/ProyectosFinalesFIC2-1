@@ -27,7 +27,7 @@
                 <TextView
                     android:id="@+id/tVId_Producto"
                     android:layout_width="75dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="#F08080"
                     android:fontFamily="sans-serif"
                     android:text="Id"
