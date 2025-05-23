@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lLV1DesignMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+    <!-- Correo -->
+    <TextView
+        android:id="@+id/tVNombreUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Correo Electrónico:"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/eTEmailUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/b612_mono"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <!-- Contraseña -->
+    <TextView
+        android:id="@+id/tVContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Contraseña:"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/eTContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/b612_mono"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <!-- Ayuda -->
+    <TextView
+        android:id="@+id/helpPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:text="¿Haz olvidado tu contraseña? Recuperar Contraseña."
+        android:textColor="#9E30FE" />
+
+    <!-- Botón de Iniciar Sesión solo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <Button
+            android:id="@+id/btniniciarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FA8072"
+            android:onClick="onIniciarSesion"
+            android:text="Iniciar Sesión"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="normal"/>
+    </LinearLayout>
+
+    <!-- Botones secundarios en horizontal -->
+    <LinearLayout
+        android:id="@+id/lLH1DesignMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnContinuarGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FA8072"
+            android:drawableLeft="@drawable/googletreintacinco"
+            android:fontFamily="sans-serif"
+            android:onClick="onInicioSesion"
+            android:text="Continuar con Google"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <!-- Registrarse y Salir -->
+    <LinearLayout
+        android:id="@+id/lLV2DesignMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrarse"
+            android:textAlignment="center"
+            android:textColor="#AA00FF" />
+
+        <Button
+            android:id="@+id/btnSalir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#FA8072"
+            android:fontFamily="sans-serif"
+            android:onClick="onSalirApp"
+            android:text="Salir"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:icon="@drawable/salirdelmenu1"
+            app:iconTint="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>

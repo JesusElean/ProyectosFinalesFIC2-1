@@ -1,0 +1,183 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainProductos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCDCDC"
+    tools:context=".MenuPrincipal">
+
+    <!-- FILA 1 -->
+    <Button
+        android:id="@+id/btnProductos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onProductos"
+        android:text="Productos"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/inventario"
+        app:iconTint="#000000"
+        app:layout_constraintDimensionRatio="1:0.88"
+        app:layout_constraintEnd_toStartOf="@+id/btnVentas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <Button
+        android:id="@+id/btnVentas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Ventas"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onVentas"
+        android:textAlignment="center"
+        android:textStyle="normal"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/ventas"
+        app:iconTint="#000000"
+        app:layout_constraintTop_toTopOf="@id/btnProductos"
+        app:layout_constraintStart_toEndOf="@id/btnProductos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:0.88"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <!-- FILA 2 -->
+    <Button
+        android:id="@+id/btnDetallesVentas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Detalles de Venta"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onDetallesVentas"
+        android:textAlignment="textEnd"
+        android:textStyle="normal"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/detallesventas"
+        app:iconTint="#000000"
+        app:layout_constraintTop_toBottomOf="@id/btnProductos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCliente"
+        app:layout_constraintDimensionRatio="1:0.88"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <Button
+        android:id="@+id/btnCliente"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Clientes"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onCliente"
+        android:textAlignment="center"
+        android:textStyle="normal"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/usuario"
+        app:iconTint="#000000"
+        app:layout_constraintTop_toTopOf="@id/btnDetallesVentas"
+        app:layout_constraintStart_toEndOf="@id/btnDetallesVentas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:0.88"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <!-- FILA 3 -->
+    <Button
+        android:id="@+id/btnPagoCredito"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Pagos Crédito"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onPagoCredito"
+        android:textAlignment="center"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/pagoscredito"
+        app:iconTint="#000000"
+        app:layout_constraintTop_toBottomOf="@id/btnDetallesVentas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnUsuario"
+        app:layout_constraintDimensionRatio="1:0.88"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <Button
+        android:id="@+id/btnUsuario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Usuario"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onUsuario"
+        android:textAlignment="center"
+        android:textStyle="normal"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/usuarios"
+        app:iconTint="#000000"
+        app:layout_constraintTop_toTopOf="@id/btnPagoCredito"
+        app:layout_constraintStart_toEndOf="@id/btnPagoCredito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:0.88"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <!-- FILA 4: Escáner centrado -->
+    <Button
+        android:id="@+id/btnescaner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Escaner"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onescaner"
+        android:textAlignment="center"
+        android:textStyle="normal"
+        app:cornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/btnPagoCredito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="2.4:1"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <!-- Botón salir -->
+    <Button
+        android:id="@+id/btnSalirDelMenu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#FA8072"
+        android:onClick="onCerrarSesion"
+        app:icon="@drawable/salirdelmenu1"
+        app:iconSize="24sp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón info cuenta -->
+    <ImageButton
+        android:id="@+id/btnInfoCuenta"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#DCDCDC"
+        android:onClick="onInfoCuenta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/usuario" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

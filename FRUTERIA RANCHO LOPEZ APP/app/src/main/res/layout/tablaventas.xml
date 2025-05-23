@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLVTablaVentas"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lLHTablaVentas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:id="@+id/tLTablaVentas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:id="@+id/tRTablaVentas_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tVId_Venta"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cuadradorojoconbordes"
+                    android:text="Id_Venta"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tVFechaVenta"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cuadradorojoconbordes"
+                    android:text="Fecha"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tVTotalVenta"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cuadradorojoconbordes"
+                    android:text="Total"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tVId_Cliente"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cuadradorojoconbordes"
+                    android:text="Id_Cliente"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tVTipoDePago"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cuadradorojoconbordes"
+                    android:text="Pago"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tRTablaVentas_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tVId_Venta_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="#FF7F50"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tVFechaVenta_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="#F08080"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tVTotalVenta_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="#FF7F50"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tVId_Cliente_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="#F08080"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tVTipoDePago_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="#FF7F50"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>

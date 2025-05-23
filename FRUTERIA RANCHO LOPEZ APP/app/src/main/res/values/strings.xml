@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FRUTERIA RANCHO LOPEZ APP</string>
+    <string name="prefs_file">com.example.fruteriarancholopezapp.PREFERENCES_FILE_KEY</string>
+    <string name="default_web_client_id">364531119454-0dmodbiq439pi9u7ml3ltqujkhg3n7v0.apps.googleusercontent.com</string>
+</resources>
