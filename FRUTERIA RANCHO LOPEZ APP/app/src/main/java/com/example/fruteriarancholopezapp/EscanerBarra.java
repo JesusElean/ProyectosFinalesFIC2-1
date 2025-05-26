@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -20,7 +19,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class EscanerBarra extends AppCompatActivity {
     Button btnEscaner;
     EditText eTCB;
-    Toolbar tBEscaner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,6 @@ public class EscanerBarra extends AppCompatActivity {
 
         btnEscaner = findViewById(R.id.btnEscaner);
         eTCB = findViewById(R.id.eTCB);
-        tBEscaner = findViewById(R.id.tBEscaner);
 
         btnEscaner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,4 +68,16 @@ public class EscanerBarra extends AppCompatActivity {
         }
     }
 
+
+    public void onRealizarVenta(View view) {
+      Toast.makeText(this, "Opción no disponible en este versión", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onAgregarProducto(View view) {
+      Toast.makeText(this, "Opción no disponible en este versión", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onSalirEscaner(View view) {
+      finish();
+    }
 }

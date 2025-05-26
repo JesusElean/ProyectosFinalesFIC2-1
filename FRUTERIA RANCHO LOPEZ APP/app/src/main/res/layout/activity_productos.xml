@@ -17,6 +17,7 @@
         android:drawableLeft="@drawable/inventario"
         android:fontFamily="sans-serif"
         android:text="PRODUCTOS"
+        android:textColor="#000000"
         android:textAlignment="textStart"
         android:textSize="26sp"
         android:textStyle="bold"

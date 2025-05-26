@@ -1,188 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainUsuario"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#DCDCDC"
     android:orientation="vertical"
     tools:context=".Clientes">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tBUsuario"
+    <TextView
+        android:id="@+id/txtProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:drawableLeft="@drawable/usuarios"
+        android:fontFamily="sans-serif"
+        android:text="USUARIOS"
+        android:textColor="#000000"
+        android:textAlignment="textStart"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112"
+        app:srcCompat="@drawable/cuadradogris" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        app:srcCompat="@drawable/cuadradogris" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="10dp"
+        android:layout_height="279dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179"
+        app:srcCompat="@drawable/cuadradogris" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="10dp"
+        android:layout_height="279dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179"
+        app:srcCompat="@drawable/cuadradogris" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144"
+        app:srcCompat="@drawable/usuario" />
+
+    <EditText
+        android:id="@+id/eTIdUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Id Usuario"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <EditText
+        android:id="@+id/eTNombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Nombre Usuario"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.726"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTIdUsuario"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/eTRol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Rol"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.726"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTNombreUsuario"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/eTContraseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTRol"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnAgregarUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#B22222"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onAgregarUsuario"
+        android:text="Agregar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="18dp"
+        app:icon="@drawable/agregar"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
-    <TableLayout
-        android:id="@+id/tLUsuario_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TableRow
-            android:id="@+id/tRUsuario_1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btnAgregarUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="sans-serif-medium"
-                android:onClick="onAgregarUsuario"
-                android:text="Agregar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:cornerRadius="20dp"
-                app:icon="@drawable/agregar"
-                app:iconTint="#000000" />
-
-            <Button
-                android:id="@+id/btnModificarUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="sans-serif-medium"
-                android:onClick="onModificarUsuario"
-                android:text="Modificar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:cornerRadius="20dp"
-                app:icon="@drawable/modificar"
-                app:iconTint="#000000" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tRUsuario_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btnBorrarUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="sans-serif-medium"
-                android:onClick="onBorrarUsuario"
-                android:text="Borrar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:cornerRadius="20dp"
-                app:icon="@drawable/borrar"
-                app:iconTint="#000000" />
-
-            <Button
-                android:id="@+id/btnConsultarUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="sans-serif-medium"
-                android:onClick="onConsultarUsuario"
-                android:text="Consultar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:cornerRadius="20dp"
-                app:icon="@drawable/consultar"
-                app:iconTint="#000000" />
-        </TableRow>
-
-    </TableLayout>
-
-    <LinearLayout
-        android:id="@+id/lLHUsuario_1"
+    <Button
+        android:id="@+id/btnModificarUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onModificarUsuario"
+        android:text="Modificar"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:cornerRadius="18dp"
+        app:icon="@drawable/modificar"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnAgregarUsuario"
+        app:layout_constraintVertical_bias="0.14" />
 
-        <EditText
-            android:id="@+id/eTIdUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Id Usuario"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTNombreUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Nombre Usuario"
-            android:inputType="text"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTRol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Rol"
-            android:inputType="text"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTContraseña"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lLVUsuario_2"
-        android:layout_width="match_parent"
-        android:layout_height="345dp"
-        android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rVUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lLVUsuario_3"
+    <Button
+        android:id="@+id/btnConsultarUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="vertical">
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onConsultarUsuario"
+        android:text="Consultar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="18dp"
+        app:icon="@drawable/consultar"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnModificarUsuario"
+        app:layout_constraintVertical_bias="0.163" />
 
-        <Button
-            android:id="@+id/btnSalirUsuario"
-            android:layout_width="62dp"
-            android:layout_height="72dp"
-            android:backgroundTint="#B22222"
-            android:onClick="onSalirUsuario"
-            app:icon="@drawable/salirdelmenu1"
-            app:iconGravity="textStart"
-            app:iconSize="24sp"
-            app:iconTint="#FFFFFF" />
+    <Button
+        android:id="@+id/btnBorrarUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onBorrarUsuario"
+        android:text="Borrar"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:cornerRadius="80dp"
+        app:icon="@drawable/borrar"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsultarUsuario"
+        app:layout_constraintVertical_bias="0.0" />
 
-    </LinearLayout>
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rVUsuario"
+        android:layout_width="0dp"
+        android:layout_height="153dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBorrarUsuario"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnSalirUsuario"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#FA8072"
+        android:onClick="onSalirUsuario"
+        app:icon="@drawable/salirdelmenu1"
+        app:iconSize="18sp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,41 +5,125 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#DCDCDC"
     tools:context=".EscanerBarra">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tBEscaner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:background="#B22222"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/eTCB"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="sans-serif"
         android:hint="CÓDIGO DE BARRAS"
         android:inputType="text"
+        android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="25sp"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tBEscaner" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.215" />
 
     <Button
         android:id="@+id/btnEscaner"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
         android:text="Escanear"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:icon="@drawable/scan"
+        app:iconGravity="textStart"
+        app:iconSize="18sp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTCB" />
+        app:layout_constraintTop_toBottomOf="@+id/eTCB"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="341dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="528dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/codigodebarras" />
+
+    <TextView
+        android:id="@+id/txtProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:drawableLeft="@drawable/scanicon"
+        android:fontFamily="sans-serif"
+        android:text="ESCANER"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAgregarProduct"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onAgregarProducto"
+        android:text="Agregar Producto"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/addproduct"
+        app:iconGravity="textStart"
+        app:iconSize="18dp"
+        app:iconTint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEscaner" />
+
+    <Button
+        android:id="@+id/btnRegistrarVenta"
+        android:layout_width="200dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onRealizarVenta"
+        android:text="Registrar Venta"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/cashregister"
+        app:iconSize="18sp"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEscaner" />
+
+    <Button
+        android:id="@+id/btnSalirEscaner"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#FA8072"
+        android:onClick="onSalirEscaner"
+        app:icon="@drawable/salirdelmenu1"
+        app:iconSize="18sp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

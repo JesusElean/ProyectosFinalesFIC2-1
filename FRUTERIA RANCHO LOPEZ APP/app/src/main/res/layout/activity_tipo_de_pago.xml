@@ -1,206 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#DCDCDC"
     android:orientation="vertical"
-    tools:context=".tipoDePago" >
+    tools:context=".tipoDePago">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cLRegistro"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/eTIdCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Id_Cliente"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTIdPago" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/tBRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#B22222"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintBottom_toTopOf="@+id/tVRegistro"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/txtProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/pagoscredito"
+        android:fontFamily="sans-serif"
+        android:text="ESCANER"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
 
-        <TextView
-            android:id="@+id/tVRegistro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Registros de Pago"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/eTIdPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Id_Pago"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProductos" />
 
-        <EditText
-            android:id="@+id/eTIdPago"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Id_Pago"
-            android:inputType="number"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tVRegistro" />
+    <EditText
+        android:id="@+id/eTFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Fecha"
+        android:inputType="date"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTIdCliente" />
 
-        <EditText
-            android:id="@+id/eTIdCliente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Id_Cliente"
-            android:inputType="number"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/eTIdPago" />
+    <EditText
+        android:id="@+id/eTMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Monto"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#696969"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTFecha" />
 
-        <EditText
-            android:id="@+id/eTFecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Fecha"
-            android:inputType="date"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/eTIdCliente" />
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onGuardar"
+        android:text="Agregar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/add"
+        app:iconSize="18dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTMonto" />
 
-        <EditText
-            android:id="@+id/eTMonto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Monto"
-            android:inputType="numberDecimal"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/eTFecha" />
+    <Button
+        android:id="@+id/btnModificarRe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onModRe"
+        android:text="Modificar"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/modificar"
+        app:iconSize="18dp"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardar" />
 
-        <TableLayout
-            android:id="@+id/tLAccionesRegistros"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <Button
+        android:id="@+id/BorrarRe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onBoRe"
+        android:text="Borrar"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/borrar"
+        app:iconSize="18dp"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsultarRe" />
 
-            <TableRow
-                android:id="@+id/tRGuardarModificar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    <Button
+        android:id="@+id/btnConsultarRe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onConsulRe"
+        android:text="Consultar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/consultar"
+        app:iconSize="18dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnModificarRe" />
 
-                <Button
-                    android:id="@+id/btnGuardar"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#CD5C5C"
-                    android:onClick="onGuardar"
-                    android:text="Guardar"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="10dp" />
+    <Button
+        android:id="@+id/btnVisualizarRe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onVisualizarRe"
+        android:text="Visualizar Registros"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="15dp"
+        app:icon="@drawable/consultar"
+        app:iconSize="18dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BorrarRe" />
 
-                <Button
-                    android:id="@+id/btnModificarRe"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:backgroundTint="#CD5C5C"
-                    android:onClick="onModRe"
-                    android:text="Modificar"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="10dp" />
-            </TableRow>
+    <Button
+        android:id="@+id/btnSalirRe"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#FA8072"
+        android:onClick="onSalirTipoPago"
+        app:icon="@drawable/salirdelmenu1"
+        app:iconSize="18sp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-            <TableRow
-                android:id="@+id/tRBorrarConsultar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/BorrarRe"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#CD5C5C"
-                    android:onClick="onBoRe"
-                    android:text="Borrar"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="10dp" />
-
-                <Button
-                    android:id="@+id/btnConsultarRe"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:backgroundTint="#CD5C5C"
-                    android:onClick="onConsulRe"
-                    android:text="Consultar"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="10dp" />
-            </TableRow>
-
-        </TableLayout>
-
-        <Button
-            android:id="@+id/btnVisualizarRe"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
-            android:backgroundTint="#F08080"
-            android:onClick="onVisualizarRe"
-            android:text="Visualizar Registros"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:cornerRadius="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tLAccionesRegistros"
-            app:layout_constraintVertical_bias="0.213" />
-
-        <Button
-            android:id="@+id/btnSalirRe"
-            android:layout_width="76dp"
-            android:layout_height="81dp"
-            android:backgroundTint="#B22222"
-            android:onClick="onSalirTipoPago"
-            app:cornerRadius="200dp"
-            app:icon="@drawable/salirdelmenu1"
-            app:iconPadding="0dp"
-            app:iconSize="35dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnVisualizarRe"
-            app:layout_constraintVertical_bias="0.891" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
