@@ -1,196 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainClientes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#DCDCDC"
     android:orientation="vertical"
     tools:context=".Clientes">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tBUsuario"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/txtProductos"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#B22222"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:layout_marginTop="32dp"
+        android:drawableLeft="@drawable/cliente"
+        android:fontFamily="sans-serif"
+        android:text="CLIENTES"
+        android:textColor="#000000"
+        android:textAlignment="textStart"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/tLUsuario_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TableRow
-            android:id="@+id/tRUsuario_1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/btnAgregarUsuario"
-                android:layout_width="205dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="@font/b612_mono"
-                android:onClick="onAgregarCliente"
-                android:text="Agregar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:icon="@drawable/agregar"
-                app:iconTint="#000000" />
-
-            <Button
-                android:id="@+id/btnModificarUsuario"
-                android:layout_width="205dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="@font/b612_mono"
-                android:onClick="onModificarCliente"
-                android:text="Modificar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:icon="@drawable/modificar"
-                app:iconTint="#000000" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tRUsuario_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/btnBorrarUsuario"
-                android:layout_width="205dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="@font/b612_mono"
-                android:onClick="onBorrarCliente"
-                android:text="Borrar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:icon="@drawable/borrar"
-                app:iconTint="#000000" />
-
-            <Button
-                android:id="@+id/btnConsultarUsuario"
-                android:layout_width="205dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#D3D3D3"
-                android:fontFamily="@font/b612_mono"
-                android:onClick="onConsultarCliente"
-                android:text="Consultar"
-                android:textAlignment="textStart"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:icon="@drawable/consultar"
-                app:iconTint="#000000" />
-        </TableRow>
-
-    </TableLayout>
-
-    <LinearLayout
-        android:id="@+id/lLHUsuario_1"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnAgregarUsuario"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onAgregarCliente"
+        android:text="Agregar"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/agregar"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTSaldoPendiente" />
 
-        <EditText
-            android:id="@+id/eTIUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Id Cliente"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTNombreCliente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Nombre"
-            android:inputType="text"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTTelefono"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Télefono"
-            android:inputType="phone"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/eTSaldoPendiente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Saldo Pendiente"
-            android:inputType="numberDecimal"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lLVUsuario_1"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnModificarUsuario"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onModificarCliente"
+        android:text="Modificar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:icon="@drawable/modificar"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarUsuario" />
 
-        <include
-            android:id="@+id/iTablaUsuario"
-            layout="@layout/tablaclientes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lLVUsuario_2"
-        android:layout_width="match_parent"
-        android:layout_height="345dp"
-        android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rVUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lLVUsuario_3"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnBorrarUsuario"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="vertical">
+        android:backgroundTint="#FA8072"
+        android:fontFamily="sans-serif"
+        android:onClick="onBorrarCliente"
+        android:text="Borrar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:icon="@drawable/borrar"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsultarUsuario" />
 
-        <Button
-            android:id="@+id/btnSalirUsuario"
-            android:layout_width="62dp"
-            android:layout_height="72dp"
-            android:backgroundTint="#B22222"
-            android:onClick="onSalirClientes"
-            app:icon="@drawable/salirdelmenu1"
-            app:iconGravity="textStart"
-            app:iconSize="24sp"
-            app:iconTint="#FFFFFF" />
+    <Button
+        android:id="@+id/btnConsultarUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onConsultarCliente"
+        android:text="Consultar"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/consultar"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnModificarUsuario" />
 
-    </LinearLayout>
-</LinearLayout>
+    <EditText
+        android:id="@+id/eTIUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColorHint="#696969"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Id Cliente"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProductos" />
+
+    <EditText
+        android:id="@+id/eTNombreCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:textColorHint="#696969"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTIUsuario" />
+
+    <EditText
+        android:id="@+id/eTTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Télefono"
+        android:textColorHint="#696969"
+        android:inputType="phone"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTNombreCliente" />
+
+    <EditText
+        android:id="@+id/eTSaldoPendiente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:textColorHint="#696969"
+        android:hint="Saldo Pendiente"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTTelefono" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rVUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSalirUsuario"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#FA8072"
+        android:onClick="onSalirClientes"
+        app:icon="@drawable/salirdelmenu1"
+        app:iconGravity="textStart"
+        app:iconSize="24sp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

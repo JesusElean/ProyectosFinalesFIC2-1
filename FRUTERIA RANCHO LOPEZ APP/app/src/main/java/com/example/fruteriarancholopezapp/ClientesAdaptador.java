@@ -42,10 +42,10 @@ public class ClientesAdaptador extends RecyclerView.Adapter<ClientesAdaptador.Cl
         TextView tvIdCliente, tvNombre, tvTelefono, tvSaldoPendiente;
         public ClienteViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvIdCliente = itemView.findViewById(R.id.tVIdUsuario_2);
-            tvNombre = itemView.findViewById(R.id.tVNombreUsuario_2);
-            tvTelefono = itemView.findViewById(R.id.tVRol_2);
-            tvSaldoPendiente = itemView.findViewById(R.id.tVContraseña_2);
+            tvIdCliente = itemView.findViewById(R.id.tVIdCliente);
+            tvNombre = itemView.findViewById(R.id.tVNombreCliente);
+            tvTelefono = itemView.findViewById(R.id.tvTelefonoCliente);
+            tvSaldoPendiente = itemView.findViewById(R.id.tvSaldoPendiente);
 
             tvIdCliente.setText("IdCliente");
             tvNombre.setText("Nombre");

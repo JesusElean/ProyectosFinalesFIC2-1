@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -23,7 +22,6 @@ import java.util.List;
 public class DetallesVentas extends AppCompatActivity {
     EditText etId_Detalle, etId_Venta, etId_Producto, etCantidad, etSubtotal;
     BasesDeDatosSQLite detallesVentasBD;
-    Toolbar cajaDeHerramientasDetalles;
     RecyclerView mostrarTabla;
     DetallesAdapter adaptadorDetallesVentas;
     List<DetallesView> listaDetallesVentas;
@@ -41,8 +39,6 @@ public class DetallesVentas extends AppCompatActivity {
         etSubtotal = findViewById(R.id.eTSubtotal);
 
         mostrarTabla = findViewById(R.id.rVDV);
-        cajaDeHerramientasDetalles = findViewById(R.id.tBDetallesVentas);
-        setSupportActionBar(cajaDeHerramientasDetalles);
 
         listaDetallesVentas = new ArrayList<>();
         adaptadorDetallesVentas = new DetallesAdapter(listaDetallesVentas);

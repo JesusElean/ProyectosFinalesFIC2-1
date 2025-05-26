@@ -48,8 +48,8 @@ public class AdaptadorUsuario extends RecyclerView.Adapter<AdaptadorUsuario.Usua
 
         public UsuarioViewHolder(@NonNull View itemView) {
             super(itemView);
-            tVIdUsuario = itemView.findViewById(R.id.tVIdUsuario_2);
-            tVNombreUsuario = itemView.findViewById(R.id.tVNombreUsuario_2);
+            tVIdUsuario = itemView.findViewById(R.id.tVIdCliente);
+            tVNombreUsuario = itemView.findViewById(R.id.tVNombreCliente);
             tVRol = itemView.findViewById(R.id.tVRol_2);
             tVContrasena = itemView.findViewById(R.id.tVContraseña_2);
 

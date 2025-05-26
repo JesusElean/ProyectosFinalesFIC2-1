@@ -23,7 +23,6 @@ import java.util.List;
 public class Clientes extends AppCompatActivity {
     EditText etIdCliente, etNombre, etTelefono, etSaldoPendiente;
     BasesDeDatosSQLite clientesBD;
-    Toolbar cajaDeHerramientasClientes;
     RecyclerView mostrarTabla;
     ClientesAdaptador adaptadorClientes;
     List<ClientesView> listaClientes;
@@ -40,8 +39,6 @@ public class Clientes extends AppCompatActivity {
         etSaldoPendiente = findViewById(R.id.eTSaldoPendiente);
 
         mostrarTabla = findViewById(R.id.rVUsuario);
-        cajaDeHerramientasClientes = findViewById(R.id.tBUsuario);
-        setSupportActionBar(cajaDeHerramientasClientes);
 
         listaClientes = new ArrayList<>();
         adaptadorClientes = new ClientesAdaptador(listaClientes);

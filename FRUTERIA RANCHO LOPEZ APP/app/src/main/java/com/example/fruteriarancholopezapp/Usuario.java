@@ -24,7 +24,6 @@ import java.util.List;
 public class Usuario extends AppCompatActivity {
     EditText eTIdUsuario, eTNombreUse, eTRol, eTContrasena;
     BasesDeDatosSQLite usuariosBD;
-    Toolbar cajaDeHerramientasUser;
     RecyclerView mostrarTabla;
     AdaptadorUsuario adaptadorUsuarios;
     List<VistaUsuario> listaUsuarios;
@@ -41,8 +40,6 @@ public class Usuario extends AppCompatActivity {
         eTContrasena = findViewById(R.id.eTContraseña);
 
         mostrarTabla = findViewById(R.id.rVUsuario);
-        cajaDeHerramientasUser= findViewById(R.id.tBUsuario);
-        setSupportActionBar(cajaDeHerramientasUser);
 
 
         listaUsuarios = new ArrayList<>();
