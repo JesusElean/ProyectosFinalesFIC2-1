@@ -1,0 +1,266 @@
+//InsertOne
+
+// Inserta un documento en la colección Mascotas
+	db.Mascotas.insertOne(
+ 	 {
+ 	   Nombre: "Paco",
+   	 Raza: "Chihuahua",
+  	  Edad: 2,
+  	  Fecha_Registro: "02/05/2025"
+  	}
+	);
+
+// Inserta un documento en la colección Clientes
+	db.Clientes.insertOne(
+ 	 {
+   	 Nombre_Del_Cliente: "Jesús Esencial",
+  	  Edad: 19,
+   	 Ciudad: "Culiacán",
+    	Municipio: "Sinaloa",
+    	País: "México",
+  	  Telefono: 6655445566,
+  	  Correo_Electronico: "jesusesencial@gmail.com"
+  	}
+	);
+
+// Inserta un documento en la colección Productos
+	db.Productos.insertOne(
+  	{
+  	Nombre_Producto: "Sobre de Premios Whiskas",
+    	Precio: 12.50,
+    	Stock: 200,
+   	 Unidad: "Kg"
+ 	 }
+	);
+
+// Inserta un documento en la colección Medicos_Veterinarios
+	db.Medicos_Veterinarios.insertOne(
+ 	 {
+   	 Nombre_Medico_Veterinario: "Juan Pedro Pascales",
+   	 Edad: 30,
+    	Ocupacion: "Veterinario",
+   	 Ciudad: "Culiacán",
+   	 Años_Laborales: 5,
+   	 Sueldo: 10000,
+  	  Telefono: 6655220011,
+   	 Correo: "juanpedropas@info.petwife.com"
+ 	 }
+	);
+
+// Inserta un documento en la colección Proveedores
+	db.Proveedores.insertOne(
+ 	 {
+   	 Nombre_Proveedor: "Ramón Ramírez Rodríguez",
+    	Edad: 25,
+   	 Empresa: "Pedigree",
+   	 Sueldo: 5000,
+   	 Vehiculo: "Camión de Carga",
+    	Telefono: 6655224477
+ 	 }
+	);
+//InsertMany
+// Inserta varios documentos en la colección Mascotas
+	db.Mascotas.insertMany([
+  	{Nombre: "Princesa", Raza: "American Bully", Edad: 5, Fecha_Registro: "01/12/2024"},
+  	{Nombre: "Destructor de Galaxias", Raza: "Dogo Argentino", Edad: 4, Fecha_Registro: "02/01/2025"},
+  	{Nombre: "Betoven", Raza: "San Benardo", Edad: 3, Fecha_Registro: "03/01/2025"},
+  	{Nombre: "Goku Black", Raza: "Gran Danés", Edad: 2, Fecha_Registro: "04/01/2025"},
+  	{Nombre: "Vegeta", Raza: "Rottweiler", Edad: 1, Fecha_Registro: "05/01/2025"},
+  	{Nombre: "MegaCaballero", Raza: "Labrador", Edad: 5, Fecha_Registro: "06/01/2025"},
+  	{Nombre: "MrBeast", Raza: "Pug", Edad: 10, Fecha_Registro: "07/01/2025"},
+  	{Nombre: "Jones", Raza: "Gato Común", Edad: 5, Fecha_Registro: "08/01/2025"},
+  	{Nombre: "Banannin", Raza: "Chihuahua", Edad: 8, Fecha_Registro: "09/01/2025"},
+  	{Nombre: "MiascuLus", Raza: "Gato Común", Edad: 5, Fecha_Registro: "10/01/2025"}
+	]);
+// Insertar Varios Documentos en la colección clientes.
+	db.Clientes.insertMany([
+  	{Nombre_Del_Cliente:"Jesús Elean Pereida Verdugo",Edad:19,Ciudad:"Culiacán Rosales",Municipio:"Culiacán",Pais:"México",Telefono:6674523576,Correo_Electronico:"jesusp.vsuperpro@gmail.com"},
+  	{Nombre_Del_Cliente:"César Alberto López Zavala",Edad:19,Ciudad:"Culiacán Rosales",Municipio:"Culiacán",Pais:"México",Telefono:6666666666,Correo_Electronico:"cesaralberto@gmail.com"},
+  	{Nombre_Del_Cliente:"Kleber Retamoza Mayorga",Edad:19,Ciudad:"Culiacán Rosales",Municipio:"Culiacán",Pais:"México",Telefono:5555555555,Correo_Electronico:"kleberretamoza@gmail.com"},
+  	{Nombre_Del_Cliente:"Jose Fernando Velazquez Espinoza",Edad:25,Ciudad:"Culiacán Rosales",Municipio:"Culiacán",Pais:"México",Telefono:4444444444,Correo_Electronico:"josefernan@gmail.com"},
+        {Nombre_Del_Cliente:"Satorou Gojo",Edad:29,Ciudad:"Culiacán Rosales",Municipio:"Culiacán",Pais:"México",Telefono:3333333333,Correo_Electronico:"gojooficialreal@gmail.com"},
+        {Nombre_Del_Cliente:"Jesús Alberto Retamoza Espinoza",Edad:24,Ciudad:"Las Flores",Municipio:"Guasave",Pais:"México",Telefono:2222222222,Correo_Electronico:"jesusalrmzez@gmail.com"},
+        {Nombre_Del_Cliente:"César Elean Velazquez Mayorga",Edad:20,Ciudad:"Las Flores",Municipio:"Guasave",Pais:"México",Telefono:1111111111,Correo_Electronico:"ceelvema@gmail.com"},
+        {Nombre_Del_Cliente:"Kleber Fernando Gojo",Edad:29,Ciudad:"Los Mochis",Municipio:"Ahome",Pais:"México",Telefono:7777777777,Correo_Electronico:"kleberrobloxiano@gmail.com"},
+        {Nombre_Del_Cliente:"Jose Alberto Retamoza Verdugo",Edad:18,Ciudad:"Los Mochis",Municipio:"Ahome",Pais:"México",Telefono:8888888888,Correo_Electronico:"joalreve@gmail.com"},
+        {Nombre_Del_Cliente:"Midas",Edad:30,Ciudad:"Las Flores",Municipio:"Guasave",Pais:"México",Telefono:9999999999,Correo_Electronico:"midasdelfornai@gmail.com"}
+	]) 
+// Insertar Varios documentos en la colección Productos.
+	db.Productos.insertMany([
+  	{Nombre_Producto:"Alimento Seco Para Perro Ganador Premium",Precio:1200,Stock:30,Unidad:"Kg"},
+  	{Nombre_Producto:"Transportadora de Mascotas",Precio:1289,Stock:10,Unidad:"1pz"},
+  	{Nombre_Producto:"Arena Para Gato Mener's Mark",Precio:438.85,Stock:30,Unidad:"Kg"},
+ 	{Nombre_Producto:"Jaula Para Perros Grandes",Precio:1730,Stock:20,Unidad:"10pz"},
+  	{Nombre_Producto:"Arnés Para Mascota Talla S",Precio:300,Stock:50,Unidad:"1pz"},
+ 	{Nombre_Producto:"Arnés Noruego Gris Chico",Precio:466,Stock:50,Unidad:"1pz"},
+  	{Nombre_Producto:"Hill's Science Diet Healthy Cuisine Alimento Húmedo",Precio:110,Stock:50,Unidad:"Kg"},
+  	{Nombre_Producto:"Catnip en Spray para Gatos",Precio:90,Stock:40,Unidad:"ml"},
+  	{Nombre_Producto:"Catnip para gatos",Precio:70,Stock:35,Unidad:"gramos"},
+  	{Nombre_Producto:"Arenero",Precio:400,Stock:10,Unidad:"1pz"},
+	])
+// Insertar varios documentos en la colección Medico_Veterinarios.
+	db.Medicos_Veterinarios.insertMany([
+	{Nombre_Medico_Veterinario:"Luis Medina",Edad:30,Ocupacion:"Veterinario",Ciudad:"Culiacán Rosales",Años_Laborales:6,Sueldo:12000,Telefono:6666,Correo:"luisme@gmail.com"},
+	{Nombre_Medico_Veterinario:"Santiago Rafael",Edad:33,Ocupacion:"Veterinario",Ciudad:"Culiacán Rosales",Años_Laborales:9,Sueldo:11500,Telefono:7777,Correo:"santra@gmail.com"},
+	{Nombre_Medico_Veterinario:"Ismael Zuñiga",Edad:30,Ocupacion:"Asistente",Ciudad:"Culiacán Rosales",Años_Laborales:4,Sueldo:5000,Telefono:8888,Correo:"ismazu@gmail.com"},
+	{Nombre_Medico_Veterinario:"Rodolfo Perez",Edad:35,Ocupacion:"Veterinario",Ciudad:"Culiacán Rosales",Años_Laborales:6,Sueldo:12000,Telefono:9999,Correo:"rodolfpe@gmail.com"},
+	{Nombre_Medico_Veterinario:"Josefino Nuñez",Edad:32,Ocupacion:"Veterinario",Ciudad:"Culiacán Rosales",Años_Laborales:5,Sueldo:11500,Telefono:1010,Correo:"josefinnuñez@gmail.com"},
+	{Nombre_Medico_Veterinario:"Alonso León",Edad:33,Ocupacion:"Asistente",Ciudad:"Las Flores",Años_Laborales:4,Sueldo:4500,Telefono:1111,Correo:"alonsoleon@gmail.com"},
+	{Nombre_Medico_Veterinario:"Jorge Sanchez",Edad:30,Ocupacion:"Veterinario",Ciudad:"Las Flores",Años_Laborales:4,Sueldo:13000,Telefono:2222,Correo:"jorgesan@gmail.com"},
+	{Nombre_Medico_Veterinario:"Iván Jimenez",Edad:38,Ocupacion:"Veterinario",Ciudad:"Las Flores",Años_Laborales:10,Sueldo:10000,Telefono:3333,Correo:"ivanjime@gmail.com"},
+	{Nombre_Medico_Veterinario:"Alonso Obregón",Edad:29,Ocupacion:"Asistente",Ciudad:"Los Mochis",Años_Laborales:3,Sueldo:4500,Telefono:4444,Correo:"alonobre@gmail.com"},
+	{Nombre_Medico_Veterinario:"Jonesy Jones",Edad:34,Ocupacion:"Asistente",Ciudad:"Los Mochis",Años_Laborales:6,Sueldo:5000,Telefono:5555,Correo:"jonesyjones@gmail.com"}
+	])
+// Insertar Varios Documentos en la colección Proveedores.
+	db.Proveedores.insertMany([
+	{Nombre_Proveedor:"Roberto",Edad:30,Empresa:"Pedigree",Sueldo:6000,Vehiculo:"Camión de Carga",Telefono:111},
+  	{Nombre_Proveedor:"Jose Luis",Edad:28,Empresa:"Dog Chow",Sueldo:2000,Vehiculo:"Camión de Carga",Telefono:211},
+  	{Nombre_Proveedor:"Andres Manuel",Edad:26,Empresa:"Whiskas",Sueldo:6000,Vehiculo:"Camión de Carga",Telefono:221},
+  	{Nombre_Proveedor:"Claudia Sheinbaum",Edad:19,Empresa:"Felix",Sueldo:5000,Vehiculo:"Camión de Carga",Telefono:222},
+ 	{Nombre_Proveedor:"Lionel Messi",Edad:45,Empresa:"Pedigree",Sueldo:4000,Vehiculo:"Camión de Carga",Telefono:322},
+  	{Nombre_Proveedor:"Cristiano Ronaldo",Edad:26,Empresa:"Whiskas",Sueldo:2000,Vehiculo:"Camión de Carga",Telefono:332},
+  	{Nombre_Proveedor:"Mario Castañeda",Edad:20,Empresa:"Dog Chow",Sueldo:4100,Vehiculo:"Camión de Carga",Telefono:333},
+  	{Nombre_Proveedor:"Rene García",Edad:60,Empresa:"Felix",Sueldo:4000,Vehiculo:"Camión de Carga",Telefono:433},
+  	{Nombre_Proveedor:"Lalo Garza",Edad:30,Empresa:"Campeon",Sueldo:5000,Vehiculo:"Camión de Carga",Telefono:443},
+ 	{Nombre_Proveedor:"Mario Lopez",Edad:25,Empresa:"Cat Chow",Sueldo:6500,Vehiculo:"Camión de Carga",Telefono:444},
+ 	{Nombre_Proveedor:"Luis Miguel",Edad:50,Empresa:"Whiskas",Sueldo:6000,Vehiculo:"Camión de Carga",Telefono:543},
+ 	{Nombre_Proveedor:"Jose Jose",Edad:52,Empresa:"Pedigree",Sueldo:5000,Vehiculo:"Camión de Carga",Telefono:554},
+  	{Nombre_Proveedor:"Joan Sebastian",Edad:20,Empresa:"Cat Chow",Sueldo:10000,Vehiculo:"Camión de Carga",Telefono:555}
+])
+
+// 	a. Mostrar los datos de las mascotas que sean de la especie “Gato” y que
+tengan mas de 5 años.
+	db.Mascotas.find(
+	{Especie:"Gato",Edad:{$gt:5}},
+	{Nombre:1,Edad:1,Especie:1,_id:0}
+	)
+
+//	b. Buscar los clientes con nombre que comience con la letra “Lu”. 
+	db.Clientes.find(
+  	{ Nombre_Del_Cliente: { $gte: "Lu", $lt: "Lv" } },
+  	{ Nombre_Del_Cliente: 1, _id: 0 }
+	)
+
+//	c. Mostrar el nombre, genero, raza y especie de las mascotas que se llamen “Puppy” o “Thor” o “Kayzer” 
+	db.Mascotas.find(
+	  { Nombre: { $in: ["Puppy", "Thor", "Kayzer"] } }, 
+	  { Nombre: 1, Genero: 1, Raza: 1, Especie: 1, _id: 0 }
+	)
+
+//	d. Buscar nombre, dirección y teléfono de los clientes que viven en “Culiacán” o “Mazatlán”
+	db.Clientes.find(
+ 	 { Ciudad: { $in: ["Culiacán", "Mazatlán"] } },
+ 	 { Nombre_Del_Cliente: 1, Pais: 1, Municipio: 1, Telefono: 1, _id: 0 }
+	)
+// 	e. Mostrar el nombre, dirección, edad y teléfono de los clientes que tengan
+entre 18 y 25 años de edad.
+	db.Clientes.find(
+ 	{ Edad: { $gte: 18, $lte: 25 } },
+ 	{ Nombre_Del_Cliente: 1, Ciudad: 1, Pais: 1, Municipio: 1, Edad: 1, Telefono: 1, _id: 0 }
+	)
+
+//	f. Mostrar el nombre, apellidos, dirección y teléfono de los médicos que se apelliden “López”. 
+	db.Medicos_Veterinarios.find(
+	{Nombre_Medico_Veterinario:"Lopez"},
+	{Nombre_Medico_Veterinario:1,Direccion:1,Telefono:1,_id:0}
+	)
+
+//	g. Obtener los datos de las consultas realizadas en mayo de 2025.
+	db.Mascotas.find(
+	{Fecha_Registro:{$gte:new Date("2025-05-01"),$lt:new Date("2025-06-01")}}
+	)
+
+//	h. Obtener las ventas realizadas en diciembre 2024 por importe mayor a 5000
+	db.Mascotas.find(
+	{Fecha_Registro:{$gte:new Date("2024-12-01"),$lt:new Date("2025-01-01")},
+	Importe:{$gt: 5000}}
+) 
+//	i. Obtener mes, año e importe de las ventas del 2025 ordenadas de mayor a menor.
+	db.Ventas.find(
+ 	 { Año: "2025" },  
+  	{ Mes: 1, Año: 1, Importe: 1, _id: 0 } 
+	).sort({ Importe: -1 }) 
+
+//	j. Listar los datos de las citas con estatus de “Pendiente”.
+	db.Citas.insertMany([
+ 	{Fecha_Cita:"12/12/2024",Hora:"6:00P M",Estatus:"Pendiente"},
+ 	 {Fecha_Cita:"25/12/2024",Hora:"2:30P M",Estatus:"Realizada"},
+ 	 {Fecha_Cita:"29/12/2024",Hora:"9:00A M",Estatus:"Realizada"},
+ 	 {Fecha_Cita:"01/01/2025",Hora:"4:00P M",Estatus:"Pendiente"},
+ 	 {Fecha_Cita:"10/02/2025",Hora:"3:30P M",Estatus:"Pendiente"}
+	])
+
+	db.Citas.find(
+	  { Estatus: "Pendiente" },  
+ 	 { Fecha_Cita: 1, Hora: 1, Estatus: 1, _id: 0 } 
+
+//	k. Buscar citas entre fechas específicas usando $gte y $lte. 
+	db.Citas.find(
+ 	 { Fecha_Cita: { $gte: "01/01/2025", $lte: "31/01/2025" } }, 
+ 	 { Fecha_Cita: 1, Hora: 1, Estatus: 1, _id: 0 }
+
+//	i. Encontrar veterinarios con especialidad en “Cirugía” o “Dermatología”. 
+	db.Medicos_Veterinarios.insertMany([
+	  {Nombre_Medico_Veterinario:"Juan 	Gustavo",Edad:35,Ocupacion:"Cirujano",Ciudad:"Culiacán",Años_Laborales:6,Sueldo:15000,Telefono:5125,Correo:	"juagus@gmail.com"},
+	  {Nombre_Medico_Veterinario:"Alexander Sanchez",Edad:29,Ocupacion:"Dermatologo",Ciudad:"Los 	Mochis",Años_Laborales:2,Sueldo:6000,Telefono:4536,Correo:"alexsan@gmail.com"},
+	  {Nombre_Medico_Veterinario:"Pepito 	Filomeno",Edad:30,Ocupacion:"Veterinario",Ciudad:"Mazatlán",Años_Laborales:6,Sueldo:10000,Telefono:7812,Cor	reo:"pepifilo@gmail.com"},
+	])
+
+	db.Medicos_Veterinarios.find(
+ 	 { Ocupacion: { $in: ["Cirujano", "Dermatologo"] } },
+ 	 { Nombre_Medico_Veterinario: 1, Ocupacion: 1, Ciudad: 1, _id: 0 }
+
+// 	m. Buscar nombre, especie y raza de las mascotas con peso mayor a 20 kg
+//y edad menor a 8 años.
+	db.Mascotas.find(
+	  { Peso: { $gt: "20kg" }, Edad: { $lt: 8 } }, 
+ 	 { Nombre: 1, Especie: 1, Raza: 1, _id: 0 }
+
+//	n. Consultar nombre, apellidos, dirección y teléfono cuyo nombre no empiece con la letra "C". 
+	db.Clientes.find(
+	  { Nombre_Del_Cliente: { $not: /^C/ } }, 
+	  { Nombre_Del_Cliente: 1, Ciudad: 1, Municipio: 1, Telefono: 1, _id: 0 }
+	)
+//	o. Obtener nombre, dirección, edad y teléfono de los médicos que trabajan en turno vespertino. 
+	db.Medicos_Veterinarios.insertMany([
+ 	 {Nombre_Medico_Veterinario:"Max 	Steel",Edad:35,Ocupacion:"Cirujano",Ciudad:"Culiacán",Años_Laborales:6,Sueldo:15000,Telefono:5125,Correo:"m	axsteel@gmail.com",Turno:"Vespertino"},
+  	{Nombre_Medico_Veterinario:"Bob Esponja",Edad:29,Ocupacion:"Dermatologo",Ciudad:"Los 	Mochis",Años_Laborales:2,Sueldo:6000,Telefono:4536,Correo:"bobesponja@gmail.com",Turno:"Vespertino"},
+	  {Nombre_Medico_Veterinario:"Bob el 	Constructor",Edad:30,Ocupacion:"Veterinario",Ciudad:"Mazatlán",Años_Laborales:6,Sueldo:10000,Telefono:7812,	Correo:"bobconstructor@gmail.com",Turno:"Matutino"},
+	])
+
+	db.Medicos_Veterinarios.find(
+ 	 { Turno: "Vespertino" }, 
+ 	 { Nombre_Medico_Veterinario: 1, Ciudad: 1, Edad: 1, Telefono: 1, _id: 0 }
+
+//LOS UPDATES SE HICIERON EN MONGO COMPASS.
+// CODIGOS DE DELETES DE MONGOSHELL
+
+//	a. Eliminar una cita que está en estatus “cancelado” 
+	db.Citas.deleteOne(
+	  { _id: "68379a239f96d57303b7173e"},
+	  {Estatus:"Cancelado"}
+	)
+
+//	b. Borrar un cliente especifico.
+	db.Clientes.deleteOne(
+	  { Nombre_Del_Cliente: "Jesús Esencial" } 
+	)
+
+//	c. Eliminar todas las mascotas que se llaman “Fifi” que sean de raza “Pomeranian” 
+	db.Mascotas.deleteMany(
+ 	 { Nombre: "Fifi", Raza: "Pomeranian" } 
+	)
+
+//	d. Eliminar todas las consultas anteriores al 2023. 
+	db.Ventas.deleteMany(
+ 	 { Fecha_Venta: { $lt: "2023-01-01" } } 
+	)
+
+//	e. Borrar los médicos que trabajan en el turno “Nocturno” o “Mixto” 
+	db.Medicos_Veterinarios.deleteMany(
+ 	 { Turno: { $in: ["Nocturno", "Mixto"] } } 
+	)
+
+//	f. Eliminar los medicamentos con stock igual a 0.
+	db.Productos.deleteMany(
+ 	 {Stock:0}
