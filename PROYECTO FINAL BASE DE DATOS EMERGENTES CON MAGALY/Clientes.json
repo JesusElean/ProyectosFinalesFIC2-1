@@ -1,0 +1,182 @@
+[
+  {
+    "Nombre_Del_Cliente": "Jesus Pereida",
+    "Edad": 34,
+    "Ciudad": "Culiacán",
+    "Municipio": "Culiacán",
+    "Pais": "México",
+    "Telefono": "6671234567",
+    "Correo_Electronico": "jesus.pereida@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Marcos Lopez",
+    "Edad": 29,
+    "Ciudad": "Mazatlán",
+    "Municipio": "Mazatlán",
+    "Pais": "México",
+    "Telefono": "6692345678",
+    "Correo_Electronico": "marcos.lopez@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Juan Lopez",
+    "Edad": 41,
+    "Ciudad": "Los Mochis",
+    "Municipio": "Ahome",
+    "Pais": "México",
+    "Telefono": "6683456789",
+    "Correo_Electronico": "juan.lopez@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Mariana Lopez",
+    "Edad": 36,
+    "Ciudad": "Guasave",
+    "Municipio": "Guasave",
+    "Pais": "México",
+    "Telefono": "6871239876",
+    "Correo_Electronico": "mariana.lopez@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Paulina Nuñez",
+    "Edad": 50,
+    "Ciudad": "Escuinapa",
+    "Municipio": "Escuinapa",
+    "Pais": "México",
+    "Telefono": "6952345678",
+    "Correo_Electronico": "paulina.nunez@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Kleber Retamoza",
+    "Edad": 27,
+    "Ciudad": "El Fuerte",
+    "Municipio": "El Fuerte",
+    "Pais": "México",
+    "Telefono": "6981234567",
+    "Correo_Electronico": "kleber.retamoza@email.com"
+  },
+ {
+    "Nombre_Del_Cliente": "Martha Lopez",
+    "Edad": 45,
+    "Ciudad": "Salvador Alvarado",
+    "Municipio": "Guamúchil",
+    "Pais": "México",
+    "Telefono": "6732349876",
+    "Correo_Electronico": "martha.lopez@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Bertha Zavala",
+    "Edad": 33,
+    "Ciudad": "Navolato",
+    "Municipio": "Navolato",
+    "Pais": "México",
+    "Telefono": "6678765432",
+    "Correo_Electronico": "bertha.zavala@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Pablo Zavala",
+    "Edad": 39,
+    "Ciudad": "Mocorito",
+    "Municipio": "Mocorito",
+    "Pais": "México",
+    "Telefono": "6734567890",
+    "Correo_Electronico": "pablo.zavala@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Camila Zavala",
+    "Edad": 26,
+    "Ciudad": "Rosario",
+    "Municipio": "Rosario",
+    "Pais": "México",
+    "Telefono": "6941234567",
+    "Correo_Electronico": "camila.zavala@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Elena Zavala",
+    "Edad": 31,
+    "Ciudad": "Concordia",
+    "Municipio": "Concordia",
+    "Pais": "México",
+    "Telefono": "6949876543",
+    "Correo_Electronico": "elena.zavala@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Angel Zavala",
+    "Edad": 38,
+    "Ciudad": "Cosalá",
+    "Municipio": "Cosalá",
+    "Pais": "México",
+    "Telefono": "6961234567",
+    "Correo_Electronico": "angel.zavala@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Isidro Zavala",
+    "Edad": 44,
+    "Ciudad": "Angostura",
+    "Municipio": "Angostura",
+    "Pais": "México",
+    "Telefono": "6736543210",
+    "Correo_Electronico": "isidro.zavala@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Estanislado Lopez",
+    "Edad": 30,
+    "Ciudad": "Sinaloa de Leyva",
+    "Municipio": "Sinaloa",
+    "Pais": "México",
+    "Telefono": "6879876543",
+    "Correo_Electronico": "estanislado.lopez@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Sofia Beltran",
+    "Edad": 52,
+    "Ciudad": "Choix",
+    "Municipio": "Choix",
+    "Pais": "México",
+    "Telefono": "6989871234",
+    "Correo_Electronico": "sofia.beltran@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Alberto Zavala",
+    "Edad": 24,
+    "Ciudad": "Badiraguato",
+    "Municipio": "Badiraguato",
+    "Pais": "México",
+    "Telefono": "6673219876",
+    "Correo_Electronico": "alberto.zavala@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Dana Armenta",
+    "Edad": 37,
+    "Ciudad": "San Ignacio",
+    "Municipio": "San Ignacio",
+    "Pais": "México",
+    "Telefono": "6962345678",
+    "Correo_Electronico": "dana.armenta@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Ana Armenta",
+    "Edad": 28,
+    "Ciudad": "Mazatlán",
+    "Municipio": "Mazatlán",
+    "Pais": "México",
+    "Telefono": "6696547890",
+    "Correo_Electronico": "ana.armenta@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Gustavo Lopez",
+    "Edad": 42,
+    "Ciudad": "Culiacán",
+    "Municipio": "Culiacán",
+    "Pais": "México",
+    "Telefono": "6672345678",
+    "Correo_Electronico": "gustavo.lopez@email.com"
+  },
+  {
+    "Nombre_Del_Cliente": "Matea Nuñez",
+    "Edad": 35,
+    "Ciudad": "Guasave",
+    "Municipio": "Guasave",
+    "Pais": "México",
+    "Telefono": "6876543210",
+    "Correo_Electronico": "matea.nunez@email.com"
+  }
+]
