@@ -1,6 +1,7 @@
 package com.example.fruteriarancholopezapp;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -44,6 +45,13 @@ public class Clientes extends AppCompatActivity {
         adaptadorClientes = new ClientesAdaptador(listaClientes);
         mostrarTabla.setLayoutManager(new LinearLayoutManager(this));
         mostrarTabla.setAdapter(adaptadorClientes);
+        adaptadorClientes.setOnClienteClickListener(new ClientesAdaptador.OnClienteClickListener() {
+            @Override
+            public void onClienteClick(ClientesView cliente) {
+                etIdCliente.setText(String.valueOf(cliente.getidCliente()));
+                Toast.makeText(Clientes.this, "Cliente seleccionado: " + cliente.getNombreCliente(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         clientesBD = new BasesDeDatosSQLite(this, "FruteriaRanchoLopez.db", null, 1);
         cargarClientes();
@@ -163,7 +171,19 @@ public class Clientes extends AppCompatActivity {
         cursorConsultar.close();
         tablaDeClientes.close();
     }
+    public void onRealizarVenta(View view) {
+        String idClienteStr = etIdCliente.getText().toString().trim();
+        android.util.Log.d("Clientes", "Valor de etIdCliente: " + idClienteStr);
 
+        if (idClienteStr.isEmpty() || idClienteStr.equals("0")) {
+            Toast.makeText(this, "Primero selecciona o ingresa un ID de cliente válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        int idCliente = Integer.parseInt(idClienteStr);
+        Intent intent = new Intent(Clientes.this, Ventas.class);
+        intent.putExtra("ID_Cliente", idCliente);
+        startActivity(intent);
+    }
     private boolean camposVacios() {
         return etIdCliente.getText().toString().isEmpty() ||
                 etNombre.getText().toString().isEmpty() ||

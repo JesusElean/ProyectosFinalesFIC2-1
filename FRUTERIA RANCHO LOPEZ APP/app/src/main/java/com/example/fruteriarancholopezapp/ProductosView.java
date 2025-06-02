@@ -1,6 +1,5 @@
 package com.example.fruteriarancholopezapp;
 
-// Clase modelo para productos en ProductosView
 public class ProductosView {
     private int ID_Producto;
     private String nombre;
@@ -8,7 +7,6 @@ public class ProductosView {
     private int stock;
     private String unidad;
 
-    // Constructor
     public ProductosView(int ID_Producto, String nombre, double precio, int stock, String unidad) {
         this.ID_Producto = ID_Producto;
         this.nombre = nombre;
@@ -17,7 +15,6 @@ public class ProductosView {
         this.unidad = unidad;
     }
 
-    // Getters
     public int getID_Producto() {
         return ID_Producto;
     }
@@ -36,5 +33,10 @@ public class ProductosView {
 
     public String getUnidad() {
         return unidad;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }

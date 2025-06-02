@@ -2,9 +2,12 @@ package com.example.fruteriarancholopezapp;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.util.Log;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +22,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.common.api.ApiException;
 
+
 public class MainActivity extends AppCompatActivity {
 
-    private static final int RC_SIGN_IN = 9001; // Corregido
-    private GoogleSignInClient googleSignInClient; // Variable global
+    private static final int RC_SIGN_IN = 9001;
+    private GoogleSignInClient googleSignInClient;
+    private EditText etNombreUsuario, etContrasena;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +35,18 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        etNombreUsuario = findViewById(R.id.eTEmailUsuario);
+        etContrasena = findViewById(R.id.eTContraseña);
+        SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+        String nombreGuardado = sharedPreferences.getString("nombre", "");
+        String passwordGuardado = sharedPreferences.getString("password", "");
+        if (!nombreGuardado.isEmpty()) {
+            etNombreUsuario.setText(nombreGuardado);
+        }
+        if (!passwordGuardado.isEmpty()) {
+            etContrasena.setText(passwordGuardado);
+        }
 
-        // Configuración de Google Sign-In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("364531119454-0dmodbiq439pi9u7ml3ltqujkhg3n7v0.apps.googleusercontent.com")
                 .requestEmail()
@@ -41,24 +56,42 @@ public class MainActivity extends AppCompatActivity {
 
         SesionUsuario sesionUsuario = new SesionUsuario(this);
         if (sesionUsuario.obtenerEmail() != null) {
-            // Si hay un usuario guardado, ir directamente a MenuPrincipal
             Intent intent = new Intent(this, MenuPrincipal.class);
             startActivity(intent);
             finish();
         }
 
-        // Ajuste de diseño para evitar solapamiento con barras del sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainProductos), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
-
-    // Método para iniciar sesión con Google
     public void onInicioSesion(View view) {
         Intent signInIntent = googleSignInClient.getSignInIntent(); // Se usa la instancia global
         startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+    public void onIniciarSesion(View view) {
+        String inputNombre = etNombreUsuario.getText().toString().trim();
+        String inputPassword = etContrasena.getText().toString().trim();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+        String nombreGuardado = sharedPreferences.getString("nombre", "");
+        String passwordGuardado = sharedPreferences.getString("password", "");
+
+        if (inputNombre.equals(nombreGuardado) && inputPassword.equals(passwordGuardado)) {
+            Toast.makeText(this, "¡Bienvenido " + inputNombre + "!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MenuPrincipal.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Error: usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onRegistrarCuenta(View view) {
+        Intent intent = new Intent(this, RegistrarCuenta.class);
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     @Override
@@ -71,9 +104,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-    //Metodo para capturar los resultados del inicio de sesion con google.
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
@@ -81,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
                 SesionUsuario sesionUsuario = new SesionUsuario(this);
                 sesionUsuario.guardarUsuario(account.getDisplayName(), account.getEmail(), account.getId());
 
-                // Navegar a MenuPrincipal
                 Intent intent = new Intent(this, MenuPrincipal.class);
                 startActivity(intent);
                 finish();
@@ -92,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onSalir(View view) {
+    public void onSalirApp(View view) {
         finish();
     }
 }

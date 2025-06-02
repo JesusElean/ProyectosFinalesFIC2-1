@@ -1,5 +1,7 @@
 package com.example.fruteriarancholopezapp;
+
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -9,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -19,9 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Ventas extends AppCompatActivity {
-    EditText etIdVenta, etFechaVenta, etTotalVenta, etIdCliente, etTipoPago;
+    EditText etIdVenta, etFechaVenta, etTotalVenta, etTipoPago;
     BasesDeDatosSQLite ventasBD;
     RecyclerView rcV;
     VentasAdapter adaptadorVentas;
@@ -36,7 +36,6 @@ public class Ventas extends AppCompatActivity {
         etIdVenta = findViewById(R.id.eTId_Venta);
         etFechaVenta = findViewById(R.id.eTFechaVenta);
         etTotalVenta = findViewById(R.id.eTTotalVentas);
-        etIdCliente = findViewById(R.id.eTId_Cliente);
         etTipoPago = findViewById(R.id.eTTipo_Pago);
         rcV = findViewById(R.id.rVVentas);
 
@@ -48,7 +47,6 @@ public class Ventas extends AppCompatActivity {
         ventasBD = new BasesDeDatosSQLite(this, "FruteriaRanchoLopez.db", null, 1);
         cargarVentas();
         camposVacios();
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainDetallesVentas), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -71,7 +69,6 @@ public class Ventas extends AppCompatActivity {
                         movimiento.getString(4)
                 ));
             } while (movimiento.moveToNext());
-
         }
         movimiento.close();
         tablaDeVentas.close();
@@ -82,56 +79,54 @@ public class Ventas extends AppCompatActivity {
         etIdVenta.setText("");
         etFechaVenta.setText("");
         etTotalVenta.setText("");
-        etIdCliente.setText("");
         etTipoPago.setText("");
     }
 
     public void onAgregarVenta(View view) {
         if (etFechaVenta.getText().toString().isEmpty() ||
                 etTotalVenta.getText().toString().isEmpty() ||
-                etIdCliente.getText().toString().isEmpty() ||
                 etTipoPago.getText().toString().isEmpty()) {
 
-            Toast.makeText(this, "Por favor, llena todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor, llena todos los campos (excepto ID_Cliente)", Toast.LENGTH_SHORT).show();
             return;
         }
 
         SQLiteDatabase tablaDeVentas = ventasBD.getWritableDatabase();
         ContentValues agregarVentas = new ContentValues();
-        agregarVentas.put("ID_Venta", etIdVenta.getText().
+        agregarVentas.put("Fecha", etFechaVenta.getText().toString());
+        agregarVentas.put("Total", etTotalVenta.getText().toString());
+        int foreignIdCliente = getIntent().getIntExtra("ID_Cliente", -1);
+        if (foreignIdCliente == -1) {
+            Toast.makeText(this, "Error al obtener el ID de Cliente", Toast.LENGTH_SHORT).show();
+            tablaDeVentas.close();
+            return;
+        }
+        agregarVentas.put("ID_Cliente", foreignIdCliente);
+        agregarVentas.put("Tipo_Pago", etTipoPago.getText().toString());
 
-                toString());
-        agregarVentas.put("Fecha", etFechaVenta.getText().
-
-                toString());
-        agregarVentas.put("Total", etTotalVenta.getText().
-
-                toString());
-        agregarVentas.put("ID_Cliente", etIdCliente.getText().
-
-                toString());
-        agregarVentas.put("Tipo_Pago", etTipoPago.getText().
-
-                toString());
-
-        tablaDeVentas.insert("venta", null, agregarVentas);
-        etIdVenta.setText("");
-        etFechaVenta.setText("");
-        etTotalVenta.setText("");
-        etIdCliente.setText("");
-        etTipoPago.setText("");
+        long newVentaId = tablaDeVentas.insert("Venta", null, agregarVentas);
+        if(newVentaId == -1) {
+            Toast.makeText(this, "Error al guardar la venta", Toast.LENGTH_SHORT).show();
+            tablaDeVentas.close();
+            return;
+        }
+        limpiarCamposDeTablaVenta();
         tablaDeVentas.close();
         cargarVentas();
         Toast.makeText(this, "VENTA AGREGADA CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(Ventas.this, DetallesVentas.class);
+        intent.putExtra("ID_Venta", (int)newVentaId);
+        intent.putExtra("ID_Producto", 1);
+        startActivity(intent);
     }
 
     public void onModificarVenta(View view) {
         if (etIdVenta.getText().toString().isEmpty() ||
                 etFechaVenta.getText().toString().isEmpty() ||
                 etTotalVenta.getText().toString().isEmpty() ||
-                etIdCliente.getText().toString().isEmpty() ||
                 etTipoPago.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Por favor, llena todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor, llena todos los campos (excepto ID_Cliente)", Toast.LENGTH_SHORT).show();
             return;
         }
         SQLiteDatabase tablaDeVentas = ventasBD.getWritableDatabase();
@@ -139,10 +134,9 @@ public class Ventas extends AppCompatActivity {
         ContentValues registroVentas = new ContentValues();
         registroVentas.put("Fecha", etFechaVenta.getText().toString());
         registroVentas.put("Total", etTotalVenta.getText().toString());
-        registroVentas.put("ID_Cliente", etIdCliente.getText().toString());
         registroVentas.put("Tipo_Pago", etTipoPago.getText().toString());
 
-        int cant = tablaDeVentas.update("venta", registroVentas, "ID_Venta=?", new String[]{iD_Venta});
+        int cant = tablaDeVentas.update("Venta", registroVentas, "ID_Venta=?", new String[]{iD_Venta});
         if (cant == 1)
             Toast.makeText(this, "SE MODIFICO LA VENTA", Toast.LENGTH_SHORT).show();
         else
@@ -162,7 +156,7 @@ public class Ventas extends AppCompatActivity {
         }
 
         SQLiteDatabase tablaDeVentas = ventasBD.getWritableDatabase();
-        int cant = tablaDeVentas.delete("venta", "ID_Venta=?", new String[]{iD_Venta});
+        int cant = tablaDeVentas.delete("Venta", "ID_Venta=?", new String[]{iD_Venta});
         tablaDeVentas.close();
 
         if (cant > 0) {
@@ -177,19 +171,14 @@ public class Ventas extends AppCompatActivity {
     public void onConsultarVenta(View view) {
         SQLiteDatabase tablaDeVentas = ventasBD.getReadableDatabase();
         String iD_Venta = etIdVenta.getText().toString();
-        Cursor cursorConsultar = tablaDeVentas.rawQuery("SELECT Fecha, Total, ID_Cliente, Tipo_Pago FROM Venta WHERE ID_Venta=?", new String[]{iD_Venta});
+        Cursor cursorConsultar = tablaDeVentas.rawQuery("SELECT Fecha, Total, Tipo_Pago FROM Venta WHERE ID_Venta=?", new String[]{iD_Venta});
         if (cursorConsultar.moveToFirst()) {
             etFechaVenta.setText(cursorConsultar.getString(0));
             etTotalVenta.setText(cursorConsultar.getString(1));
-            etIdCliente.setText(cursorConsultar.getString(2));
-            etTipoPago.setText(cursorConsultar.getString(3));
+            etTipoPago.setText(cursorConsultar.getString(2));
         } else {
             Toast.makeText(this, "NO EXISTE LA VENTA", Toast.LENGTH_SHORT).show();
-            etIdVenta.setText("");
-            etFechaVenta.setText("");
-            etTotalVenta.setText("");
-            etIdCliente.setText("");
-            etTipoPago.setText("");
+            limpiarCamposDeTablaVenta();
         }
         cursorConsultar.close();
         tablaDeVentas.close();
@@ -199,9 +188,9 @@ public class Ventas extends AppCompatActivity {
         return etIdVenta.getText().toString().isEmpty() ||
                 etFechaVenta.getText().toString().isEmpty() ||
                 etTotalVenta.getText().toString().isEmpty() ||
-                etIdCliente.getText().toString().isEmpty() ||
                 etTipoPago.getText().toString().isEmpty();
     }
+
     public void onSalirDeVentas(View view) {
         finish();
     }

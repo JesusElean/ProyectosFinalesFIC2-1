@@ -59,7 +59,7 @@ public class Productos extends AppCompatActivity {
     }
 
     private void cargarProductos() {
-        listaProductos.clear(); // Limpiar la lista antes de cargar nuevos datos
+        listaProductos.clear();
 
         SQLiteDatabase bd = database.getReadableDatabase();
         Cursor cursor = bd.rawQuery("SELECT ID_Producto, Nombre, Precio, Stock, Unidad FROM producto", null);
@@ -90,7 +90,6 @@ public class Productos extends AppCompatActivity {
         etUnidad.setText("");
     }
     public void onAgregar(View view) {
-        // Validar si hay campos vacíos.
         if (etNombre.getText().toString().isEmpty() ||
                 etPrecio.getText().toString().isEmpty() ||
                 etStock.getText().toString().isEmpty() ||

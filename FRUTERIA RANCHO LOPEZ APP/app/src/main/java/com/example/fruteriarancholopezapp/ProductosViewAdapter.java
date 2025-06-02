@@ -1,5 +1,7 @@
 package com.example.fruteriarancholopezapp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +17,6 @@ public class ProductosViewAdapter extends RecyclerView.Adapter<ProductosViewAdap
 
     private List<ProductosView> listaProductos;
 
-    // Constructor
     public ProductosViewAdapter(List<ProductosView> listaProductos) {
         this.listaProductos = listaProductos;
     }
@@ -35,6 +36,15 @@ public class ProductosViewAdapter extends RecyclerView.Adapter<ProductosViewAdap
         holder.tvPrecio.setText("$ " + producto.getPrecio());
         holder.tvStock.setText(String.valueOf(producto.getStock()));
         holder.tvUnidad.setText(String.valueOf(producto.getUnidad()));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("ID_Producto", producto.getID_Producto());
+                ((Activity) view.getContext()).setResult(Activity.RESULT_OK, resultIntent);
+                ((Activity) view.getContext()).finish();
+            }
+        });
 
 
         String nombreNormalizado = producto.getNombre()

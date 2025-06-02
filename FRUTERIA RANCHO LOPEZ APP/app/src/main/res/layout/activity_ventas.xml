@@ -19,6 +19,7 @@
         android:text="VENTAS"
         android:textAlignment="textStart"
         android:textSize="26sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -160,25 +161,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/eTId_Cliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="IdCliente"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textColorHint="#696969"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/eTTotalVentas"
-        app:layout_constraintVertical_bias="0.002" />
-
-    <EditText
         android:id="@+id/eTTipo_Pago"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -189,12 +171,9 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="#696969"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTId_Cliente"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/eTTotalVentas" />
 
     <Button
         android:id="@+id/btnSalirDeVentas"
@@ -210,10 +189,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rVVentas"
-        android:background="#FFFFFF"
-        android:layout_marginTop="10dp"
         android:layout_width="411dp"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

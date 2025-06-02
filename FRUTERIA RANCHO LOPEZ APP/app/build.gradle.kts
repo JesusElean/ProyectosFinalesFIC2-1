@@ -44,6 +44,7 @@ dependencies {
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
     implementation ("com.google.android.gms:play-services-auth:20.6.0")
 
+
     // ZXing para escaneo de códigos de barras y QR
     implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
 

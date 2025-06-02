@@ -10,13 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-
 public class ClientesAdaptador extends RecyclerView.Adapter<ClientesAdaptador.ClienteViewHolder> {
+    private OnClienteClickListener onClienteClickListener;
+    public interface OnClienteClickListener {
+        void onClienteClick(ClientesView cliente);
+    }
+    public void setOnClienteClickListener(OnClienteClickListener listener) {
+        this.onClienteClickListener = listener;
+    }
     private List<ClientesView> listaDeClientes;
     public ClientesAdaptador(List<ClientesView> listaDeClientes){
         this.listaDeClientes = listaDeClientes;
     }
-
     @NonNull
     @Override
     public ClientesAdaptador.ClienteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -31,13 +36,20 @@ public class ClientesAdaptador extends RecyclerView.Adapter<ClientesAdaptador.Cl
     holder.tvNombre.setText(cliente.getNombreCliente());
     holder.tvTelefono.setText(cliente.getTelefono());
     holder.tvSaldoPendiente.setText(String.valueOf(cliente.getSaldoPendiente()));
-    }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(onClienteClickListener != null) {
+                    onClienteClickListener.onClienteClick(cliente);
+                }
+            }
+        });
 
+    }
     @Override
     public int getItemCount() {
         return listaDeClientes.size();
     }
-
     public static class ClienteViewHolder extends RecyclerView.ViewHolder {
         TextView tvIdCliente, tvNombre, tvTelefono, tvSaldoPendiente;
         public ClienteViewHolder(@NonNull View itemView) {

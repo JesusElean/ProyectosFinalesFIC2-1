@@ -23,17 +23,15 @@ public class CuentaUsuario extends AppCompatActivity {
         tvEmail = findViewById(R.id.tvEmailInfo);
         ivFoto = findViewById(R.id.ivFotoUser);
 
-        // Obtener los datos del usuario desde SharedPreferences
         SesionUsuario sesionUsuario = new SesionUsuario(this);
         String nombre = sesionUsuario.obtenerNombre();
         String email = sesionUsuario.obtenerEmail();
-        String fotoUrl = sesionUsuario.obtenerId(); // Aquí podrías almacenar la URL de la foto en `SesionUsuario`
+        String fotoUrl = sesionUsuario.obtenerId();
 
         // Mostrar datos en la UI
         tvNombre.setText(nombre);
         tvEmail.setText(email);
 
-        // Cargar imagen de perfil con Glide (Asegúrate de agregar la dependencia)
         Glide.with(this).load(fotoUrl).circleCrop().into(ivFoto);
     }
 }

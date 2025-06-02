@@ -8,7 +8,6 @@
     android:background="@drawable/uisesion"
     tools:context=".MainActivity">
 
-    <!-- Guía al 30% de la pantalla -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop"
         android:layout_width="wrap_content"
@@ -16,7 +15,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
-    <!-- Contenedor principal -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"

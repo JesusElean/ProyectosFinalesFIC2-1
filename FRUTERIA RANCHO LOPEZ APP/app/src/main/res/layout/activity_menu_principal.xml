@@ -8,7 +8,6 @@
     android:background="#DCDCDC"
     tools:context=".MenuPrincipal">
 
-    <!-- FILA 1 -->
     <Button
         android:id="@+id/btnProductos"
         android:layout_width="0dp"
@@ -51,7 +50,6 @@
         app:layout_constraintDimensionRatio="1:0.88"
         app:layout_constraintWidth_percent="0.45" />
 
-    <!-- FILA 2 -->
     <Button
         android:id="@+id/btnDetallesVentas"
         android:layout_width="0dp"
@@ -94,7 +92,6 @@
         app:layout_constraintDimensionRatio="1:0.88"
         app:layout_constraintWidth_percent="0.45" />
 
-    <!-- FILA 3 -->
     <Button
         android:id="@+id/btnPagoCredito"
         android:layout_width="0dp"
@@ -136,7 +133,6 @@
         app:layout_constraintDimensionRatio="1:0.88"
         app:layout_constraintWidth_percent="0.45" />
 
-    <!-- FILA 4: Escáner centrado -->
     <Button
         android:id="@+id/btnescaner"
         android:layout_width="0dp"
@@ -156,7 +152,6 @@
         app:layout_constraintDimensionRatio="2.4:1"
         app:layout_constraintWidth_percent="0.9" />
 
-    <!-- Botón salir -->
     <Button
         android:id="@+id/btnSalirDelMenu"
         android:layout_width="50dp"
@@ -169,7 +164,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Botón info cuenta -->
     <ImageButton
         android:id="@+id/btnInfoCuenta"
         android:layout_width="50dp"

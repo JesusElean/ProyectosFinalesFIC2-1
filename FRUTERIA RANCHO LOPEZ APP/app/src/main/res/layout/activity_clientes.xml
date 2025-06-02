@@ -18,8 +18,8 @@
         android:drawableLeft="@drawable/cliente"
         android:fontFamily="sans-serif"
         android:text="CLIENTES"
-        android:textColor="#000000"
         android:textAlignment="textStart"
+        android:textColor="#000000"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,18 +96,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnModificarUsuario" />
 
+    <Button
+        android:id="@+id/btnRealizarVenta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFE4E1"
+        android:fontFamily="sans-serif"
+        android:onClick="onRealizarVenta"
+        android:text="Realizar Venta"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/ventarealizada"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBorrarUsuario" />
+
     <EditText
         android:id="@+id/eTIUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColorHint="#696969"
         android:layout_weight="1"
         android:ems="10"
         android:hint="Id Cliente"
         android:inputType="number"
         android:textAlignment="center"
         android:textColor="#000000"
+        android:textColorHint="#696969"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,11 +136,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:textColorHint="#696969"
         android:hint="Nombre"
         android:inputType="text"
         android:textAlignment="center"
         android:textColor="#000000"
+        android:textColorHint="#696969"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTIUsuario" />
@@ -135,10 +152,10 @@
         android:layout_weight="1"
         android:ems="10"
         android:hint="Télefono"
-        android:textColorHint="#696969"
         android:inputType="phone"
         android:textAlignment="center"
         android:textColor="#000000"
+        android:textColorHint="#696969"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTNombreCliente" />
@@ -149,11 +166,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:textColorHint="#696969"
         android:hint="Saldo Pendiente"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         android:textColor="#000000"
+        android:textColorHint="#696969"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTTelefono" />
@@ -161,10 +178,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rVUsuario"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRealizarVenta"
+        app:layout_goneMarginTop="100dp" />
 
     <Button
         android:id="@+id/btnSalirUsuario"
