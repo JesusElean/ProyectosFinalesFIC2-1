@@ -14,6 +14,22 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexionDB {
+
+ public static Connection getConnection() {
+    String url = "jdbc:postgresql://pg-10e770e6-info-6f2f.d.aivencloud.com:22812/defaultdb";
+    String usuario = "avnadmin";
+    String contraseña = "AVNS_38nwso6-4xpUrdjfEvA";
+
+    try {
+        return DriverManager.getConnection(url, usuario, contraseña);
+    } catch (SQLException e) {
+        System.err.println("Error al obtener la conexión: " + e.getMessage());
+        return null;
+    }
+}
+
+
+
      private String host;
     private int puerto;
     private String baseDatos;

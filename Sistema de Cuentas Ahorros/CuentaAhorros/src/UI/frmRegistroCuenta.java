@@ -12,6 +12,8 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.text.AbstractDocument;
 
+import SQL.Cuenta;
+
 /**
  *
  * @author Jesus
@@ -29,6 +31,22 @@ public class frmRegistroCuenta extends javax.swing.JFrame {
         ((AbstractDocument) this.txtEmail.getDocument()).setDocumentFilter(new LongitudDocumentFilter(100)); 
     }
 
+    private void reiniciarCampos() {
+        txtNombre.setText("Ingrese su Nombre:");
+        txtNombre.setForeground(Color.GRAY);
+        
+        txtApellidoPaterno.setText("Ingrese su Apellido Paterno:");
+        txtApellidoPaterno.setForeground(Color.GRAY);
+        
+        txtApellidoMaterno.setText("Ingrese su Apellido Materno:");
+        txtApellidoMaterno.setForeground(Color.GRAY);
+        
+        txtEmail.setText("Ingrese su Correo Electrónico:");
+        txtEmail.setForeground(Color.GRAY);
+        
+        txtCapital.setText("Ingrese su Capital:");
+        txtCapital.setForeground(Color.GRAY);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -137,6 +155,12 @@ public class frmRegistroCuenta extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnTxtExitMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTxtExitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTxtExitMouseExited(evt);
+            }
         });
 
         javax.swing.GroupLayout btnExitLayout = new javax.swing.GroupLayout(btnExit);
@@ -165,7 +189,7 @@ public class frmRegistroCuenta extends javax.swing.JFrame {
 
         frmFondo.add(jPHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 40));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Roboto Black", 1, 48)); // NOI18N
         jLabel4.setText("REGISTRO CUENTA");
         frmFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, -1));
 
@@ -285,6 +309,11 @@ public class frmRegistroCuenta extends javax.swing.JFrame {
         frmFondo.add(spEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 450, 10));
 
         btnCancelar.setBackground(new java.awt.Color(255, 186, 21));
+        btnCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelarMouseClicked(evt);
+            }
+        });
 
         lblCancelar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblCancelar.setForeground(new java.awt.Color(255, 255, 255));
@@ -306,6 +335,11 @@ public class frmRegistroCuenta extends javax.swing.JFrame {
         frmFondo.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 680, 130, 50));
 
         btnGuardar.setBackground(new java.awt.Color(255, 186, 21));
+        btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGuardarMouseClicked(evt);
+            }
+        });
 
         lblGuardar.setBackground(new java.awt.Color(255, 255, 255));
         lblGuardar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -379,17 +413,15 @@ public class frmRegistroCuenta extends javax.swing.JFrame {
     }//GEN-LAST:event_jPHeaderMouseDragged
 
     private void btnTxtExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTxtExitMouseClicked
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_btnTxtExitMouseClicked
 
     private void jPHeaderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPHeaderMouseEntered
-        btnExit.setBackground(Color.RED);
-        btnTxtExit.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_jPHeaderMouseEntered
 
     private void jPHeaderMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPHeaderMouseExited
-        btnExit.setBackground(Color.WHITE);
-        btnTxtExit.setBackground(Color.BLACK);
+
     }//GEN-LAST:event_jPHeaderMouseExited
 
     private void lblGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGuardarMouseEntered
@@ -526,12 +558,92 @@ public class frmRegistroCuenta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCapitalMousePressed
 
     private void lblGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGuardarMouseClicked
-        if(!ValidadorCampos.esEmailValido(this.txtEmail.getText())){
-            JOptionPane.showMessageDialog(null, "Email Invalido", "Registro de cuentas", JOptionPane.ERROR_MESSAGE);
-            this.txtEmail.setFocusable(true);
-            this.txtEmail.selectAll();
+              // Validaciones y lógica de guardado...
+        if(!ValidadorCampos.esEmailValido(txtEmail.getText().trim())){
+            JOptionPane.showMessageDialog(this, "Email inválido.", "Registro de cuentas", JOptionPane.ERROR_MESSAGE);
+            txtEmail.requestFocus();
+            txtEmail.selectAll();
+            return;
+        }
+
+        // Conversión de capital
+        double capital;
+        try {
+            capital = Double.parseDouble(txtCapital.getText().trim());
+        } catch(NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "El capital debe ser un número válido.", "Registro de cuentas", JOptionPane.ERROR_MESSAGE);
+            txtCapital.requestFocus();
+            txtCapital.selectAll();
+            return;
+        }
+        
+        // Crear e inicializar la cuenta
+        Cuenta cuenta = new Cuenta();
+        cuenta.setNombre(txtNombre.getText().trim());
+        cuenta.setApellidoPaterno(txtApellidoPaterno.getText().trim());
+        cuenta.setApellidoMaterno(txtApellidoMaterno.getText().trim());
+        cuenta.setEmail(txtEmail.getText().trim());
+        cuenta.setCapital(capital);
+        
+        // Intentamos insertar la cuenta
+        if (cuenta.insertar()) {
+            JOptionPane.showMessageDialog(this, "Cuenta registrada exitosamente.", "Registro de cuentas", JOptionPane.INFORMATION_MESSAGE);
+            reiniciarCampos();  // Llamamos al método para reiniciar los campos
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al registrar la cuenta.", "Registro de cuentas", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_lblGuardarMouseClicked
+
+    private void btnTxtExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTxtExitMouseEntered
+        btnTxtExit.setBackground(Color.WHITE);
+        btnTxtExit.setBackground(Color.BLACK);   
+    }//GEN-LAST:event_btnTxtExitMouseEntered
+
+    private void btnTxtExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTxtExitMouseExited
+        btnTxtExit.setBackground(Color.RED);
+        btnTxtExit.setBackground(Color.WHITE);    
+    }//GEN-LAST:event_btnTxtExitMouseExited
+
+    private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
+              // Validaciones y lógica de guardado...
+        if(!ValidadorCampos.esEmailValido(txtEmail.getText().trim())){
+            JOptionPane.showMessageDialog(this, "Email inválido.", "Registro de cuentas", JOptionPane.ERROR_MESSAGE);
+            txtEmail.requestFocus();
+            txtEmail.selectAll();
+            return;
+        }
+
+        // Conversión de capital
+        double capital;
+        try {
+            capital = Double.parseDouble(txtCapital.getText().trim());
+        } catch(NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "El capital debe ser un número válido.", "Registro de cuentas", JOptionPane.ERROR_MESSAGE);
+            txtCapital.requestFocus();
+            txtCapital.selectAll();
+            return;
+        }
+        
+        // Crear e inicializar la cuenta
+        Cuenta cuenta = new Cuenta();
+        cuenta.setNombre(txtNombre.getText().trim());
+        cuenta.setApellidoPaterno(txtApellidoPaterno.getText().trim());
+        cuenta.setApellidoMaterno(txtApellidoMaterno.getText().trim());
+        cuenta.setEmail(txtEmail.getText().trim());
+        cuenta.setCapital(capital);
+        
+        // Intentamos insertar la cuenta
+        if (cuenta.insertar()) {
+            JOptionPane.showMessageDialog(this, "Cuenta registrada exitosamente.", "Registro de cuentas", JOptionPane.INFORMATION_MESSAGE);
+            reiniciarCampos();  // Llamamos al método para reiniciar los campos
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al registrar la cuenta.", "Registro de cuentas", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnGuardarMouseClicked
+
+    private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
+        reiniciarCampos();
+    }//GEN-LAST:event_btnCancelarMouseClicked
 
  
     public static void main(String args[]) {

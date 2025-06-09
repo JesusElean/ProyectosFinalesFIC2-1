@@ -4,6 +4,8 @@
  */
 package cuentaahorros;
 
+import UI.frmCuentaAhorros;
+
 /**
  *
  * @author Jesus
@@ -14,7 +16,9 @@ public class CuentaAhorros {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        frmCuentaAhorros ventana= new frmCuentaAhorros();
+        ventana.setVisible(true);
+
     }
     
 }
